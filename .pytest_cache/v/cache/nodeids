@@ -1,0 +1,5 @@
+[
+  "test/test_api.py::TestApi::()::test_get",
+  "test/test_cfg.py::TestA::()::test_json_cfg",
+  "test/test_cfg.py::TestA::()::test_yaml"
+]

@@ -5,39 +5,22 @@ __date__ = '2018/6/23 下午4:12'
 from pithy import request
 import pytest
 
-class DemoAPP:
+from API import get
 
-    def __init__(self):
-        self.base_url = ''
 
-    @request(url='')
-    def get(self, value):
-        '''
-        get接口
-        :param value:
-        :return:
-        '''
-        params = {
-            'key': value
-        }
-
-        return dict(params=params)
-
-    @request(url='', method='post')
-    def _login(self, value):
-        data={
-            '': value
-        }
-
-        return dict(data = data)
 
 @pytest.mark.bvt
-class TestApi(pytest):
+class TestApi:
 
-    def setUp(self):
-        self.app = DemoAPP()
+    @classmethod
+    def test_setUp(cls):
+        cls.app = get.DemoAPP()
 
     def test_get(self):
 
-        r = DemoAPP().get('').json
-        assert r.agrs.key == 123
+        r = get.DemoAPP().get('123').json
+
+        assert r.args.key == '123'
+
+
+

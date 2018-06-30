@@ -14,4 +14,4 @@ class TestA:
 
     def test_yaml(self):
         cfg= Config('cfg.yaml')
-        assert cfg['user'] == 'admi'
+        assert cfg['user'] == 'admin'
